@@ -15,7 +15,7 @@ function MyMap() {
   // Start map with fetched latitude and longitude
   const initializeMap = async (cityName) => {
     const myAPIKey = 'bc942683c0154ef7af35b4b812414db5';
-    const mapStyle = 'https://maps.geoapify.com/v1/styles/klokantech-basic/style.json';
+    const mapStyle = 'https://maps.geoapify.com/v1/styles/maptiler-3d/style.json';
     const { lat, lon } = await getLatLong(cityName);
     if (lat && lon) {
       setInitialState({
@@ -30,6 +30,8 @@ function MyMap() {
         center: [lon, lat],
         zoom: initialState.zoom
       });
+
+      mapInstance.addControl(new maplibre.NavigationControl());
 
       setMap(mapInstance);
     }
