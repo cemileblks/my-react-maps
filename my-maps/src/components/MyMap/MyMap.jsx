@@ -11,7 +11,10 @@ function MyMap() {
   const [initialState, setInitialState] = useState({
     lng: -1.0724,
     lat: 53.9920,
-    zoom: 10
+    // zoom: 12
+    zoom: 15, // Adjust the initial zoom level to zoom more into the city
+    pitch: 70, // Set pitch to tilt the map for a 3D view
+    bearing: -60 // Set bearing to tilt the map sideways
   });
 
   // Start map with fetched latitude and longitude
